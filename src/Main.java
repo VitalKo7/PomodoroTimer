@@ -14,14 +14,14 @@ public class Main {
 
     public static void main(String[] args) {
         int workCounter = 0;
-        LocalTime localTime = LocalTime.now().plusMinutes(1);
-        startWork(workCounter, localTime);
+        LocalTime workshiftLimit = LocalTime.now().plusMinutes(1);
+        startWork(workCounter, workshiftLimit);
     }
 
-    private static void startWork(int workCounter, LocalTime localTime) {
+    private static void startWork(int workCounter, LocalTime workshiftLimit) {
         LocalTime timeNow = LocalTime.now();
 
-        while (timeNow.isBefore(localTime)) {
+        while (timeNow.isBefore(workshiftLimit)) {
 
             System.out.println("Start work!");
             sleep(INITIAL_WORK_LENGTH);
